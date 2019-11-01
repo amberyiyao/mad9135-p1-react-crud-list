@@ -1,0 +1,19 @@
+header{
+    height: 3.5rem;
+    width: calc(100% - 2rem);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: steelblue;
+    color: white;
+    padding: 0 1rem;
+}
+
+header img{
+    width: 3rem;
+}
+
+header p{
+    font-weight: 700;
+    font-size: 1.3rem;
+}
