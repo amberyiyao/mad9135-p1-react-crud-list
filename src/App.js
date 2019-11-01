@@ -7,7 +7,16 @@ import { HashRouter as Router, Route, Link, Switch } from 'react-router-dom'
 class App extends React.Component{
 
   state = {
-
+    list: [{
+        name: 'Vue',
+        lead: 'Even You',
+        docsURL: 'https://vuejs.org/'
+      },{
+        name: 'Vue',
+        lead: 'Even You',
+        docsURL: 'https://vuejs.org/'
+      }
+    ]
   }
 
   render(){
