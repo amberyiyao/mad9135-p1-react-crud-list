@@ -21,6 +21,9 @@ header p{
 header a{
     color: white;
     text-decoration: none;
+    background: none;
+    width: auto;
+    font-size: 1rem;
 }
 
 header a:active{

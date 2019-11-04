@@ -27,36 +27,37 @@ p{
   color: #09d3ac;
 }
 
-button{
+a{
   cursor: pointer;
   background-color: white;
   width: 4rem;
   padding: 5px 0;
   border-radius: 5px;
   font-size: 0.7rem;
+  text-decoration: none;
 }
 
-button:focus{
+a:focus{
   outline: none;
 }
 
-button.green{
+a.green{
   border: 1px solid rgb(96, 213, 203);
   color: rgb(96, 213, 203);
   margin-bottom: 5px;
 }
 
-button.green:active{
+a.green:active{
   color: white;
   background-color: rgb(96, 213, 203);
 }
 
-button.red{
+a.red{
   border: 1px solid rgb(252, 133, 133);
   color: rgb(252, 133, 133);
 }
 
-button.red:active{
+a.red:active{
   color: white;
   background-color: rgb(252, 133, 133);
 }

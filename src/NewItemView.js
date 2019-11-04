@@ -1,5 +1,7 @@
 import React from 'react';
 import './NewItemView.css'
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
+
 
 function NewItemView(){
     return <div className="addNew">
@@ -18,8 +20,8 @@ function NewItemView(){
             </div>
         </div>
         <div className="actions">
-            <button className="save green">SAVE</button>
-            <button className="cancel red">CANCEL</button>
+            <Link className="save green">SAVE</Link>
+            <Link className="cancel red">CANCEL</Link>
         </div>
     </div>
 }
