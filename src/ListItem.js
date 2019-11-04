@@ -11,9 +11,9 @@ function ListItem(props){
                     <a href={props.item.docsURL}>Official Docs</a>
                 </div>
             </div>
-            <div className="itemActions">
-                <button>EDIT</button>
-                <button>DELETE</button>
+            <div className="actions">
+                <button className="edit green">EDIT</button>
+                <button className="delete red">DELETE</button>
             </div>
         </div>
     )

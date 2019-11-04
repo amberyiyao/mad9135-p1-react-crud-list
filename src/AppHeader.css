@@ -4,7 +4,7 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: steelblue;
+    background-color: rgb(45, 56, 71);
     color: white;
     padding: 0 1rem;
 }
@@ -16,4 +16,13 @@ header img{
 header p{
     font-weight: 700;
     font-size: 1.3rem;
+}
+
+header a{
+    color: white;
+    text-decoration: none;
+}
+
+header a:active{
+    text-decoration: underline;
 }

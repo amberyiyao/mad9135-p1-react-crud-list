@@ -40,3 +40,7 @@
 .itemInfo a:hover{
     text-decoration: underline;
 }
+
+.item div.actions{
+    align-items: flex-end;
+}

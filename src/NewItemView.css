@@ -1,0 +1,42 @@
+.addNew{
+    width: calc(100% - 2rem);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+}
+
+.inputs{
+    width: 80%;
+}
+
+.inputs p{
+    color: rgba(128, 128, 128, 0.705);
+    font-weight: 700;
+}
+
+.inputs div{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 1rem 0;
+}
+
+.inputs input{
+    width: 60%;
+    padding: 10px;
+    margin-left: 0.5rem;
+    border: 0;
+    border-radius: 5px;
+    background-color: rgb(237, 242, 247);
+}
+
+.inputs input:focus{
+    outline: none;
+}
+
+.actions{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}

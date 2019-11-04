@@ -26,3 +26,43 @@ p{
 .App-link {
   color: #09d3ac;
 }
+
+button{
+  cursor: pointer;
+  background-color: white;
+  width: 4rem;
+  padding: 5px 0;
+  border-radius: 5px;
+  font-size: 0.7rem;
+}
+
+button:focus{
+  outline: none;
+}
+
+button.green{
+  border: 1px solid rgb(96, 213, 203);
+  color: rgb(96, 213, 203);
+  margin-bottom: 5px;
+}
+
+button.green:active{
+  color: white;
+  background-color: rgb(96, 213, 203);
+}
+
+button.red{
+  border: 1px solid rgb(252, 133, 133);
+  color: rgb(252, 133, 133);
+}
+
+button.red:active{
+  color: white;
+  background-color: rgb(252, 133, 133);
+}
+
+.addTitle{
+  margin: 2rem 0 1rem;
+  font-weight: 500;
+  font-size: 1.3rem;
+}
