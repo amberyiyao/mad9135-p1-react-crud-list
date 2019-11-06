@@ -32,12 +32,14 @@ class App extends React.Component{
 
   handleDeleteFramework = (ev) =>{
     const id = Number(ev.target.getAttribute('data-id'))
+
     const newList = this.state.list.filter((frame) => {
       if(frame.id == id ){
-        return false
-      } else {
+        if(window.confirm(`Do you want to delet ${frame.name}?`)){
+          return false
+        }
+      } 
         return true
-      }
     })
     this.setState({list: newList})
   }
