@@ -80,7 +80,7 @@ class App extends React.Component{
 
   render(){
     return (
-      <Router>
+      <Router basename="/mad9135-p1-react-crud-list" >
         <div className="App">
           <AppHeader/>
           <Switch>

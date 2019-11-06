@@ -17,7 +17,7 @@
 
 .itemInfo div{
     display: flex;
-    width: 12rem;
+    width: 16rem;
     justify-content: space-between;
     align-items: center;
     font-size: 0.8rem;
@@ -25,6 +25,7 @@
 
 .itemInfo div p{
     color: gray;
+    text-align: left;
 }
 
 .itemInfo>p{
