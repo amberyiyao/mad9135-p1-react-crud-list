@@ -20,8 +20,35 @@ class App extends React.Component{
         lead: 'Even You',
         docsURL: 'https://vuejs.org/'
       }
-    ]
+    ],
+    inputValue: {}
   }
+
+  handleInputChange = ({target: {id, value}}) => {
+    const newValue = {...this.state.inputValue, [id]: value}
+    this.setState({inputValue: newValue})
+
+  }
+
+  handleAddFramework = (target)=>{
+    const id = target.getAttribute('data-id')
+
+    if(id !== 0){
+      const newList = this.state.list.map((frame)=> {
+        if (frame.id === id){
+          return {id: id, ...this.state.inputValue}
+        } else {
+          return frame
+        }
+      })
+      this.setState({list: newList})
+    } else {
+      const newFramework = {id:Date.now(),...this.state.inputValue}
+      const newList = [newFramework,...this.state.list]
+      this.setState({list: newList})
+    }
+  }
+
 
   render(){
     return (
@@ -31,7 +58,7 @@ class App extends React.Component{
           <Switch>
             <Route path="/addNew">
               <p className="addTitle">Add a New Framework</p>
-              <NewItemView/>
+              <NewItemView handleInputChange={this.handleInputChange} handleAddFramework={this.handleAddFramework}/>
             </Route>
             <Route path="/">
               <ListView list={this.state.list}/>

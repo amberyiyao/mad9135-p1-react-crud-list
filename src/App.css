@@ -62,6 +62,16 @@ a.red:active{
   background-color: rgb(252, 133, 133);
 }
 
+a.cancel{
+  border: 1px solid rgb(156, 156, 156);
+  color: rgb(156, 156, 156);
+}
+
+a.cancel:active{
+  color: white;
+  background-color: rgb(156, 156, 156);
+}
+
 .addTitle{
   margin: 2rem 0 1rem;
   font-weight: 500;
