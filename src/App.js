@@ -30,7 +30,7 @@ class App extends React.Component{
 
   }
 
-  handleAddFramework = (target)=>{
+  handleAddorEditFramework = (target)=>{
     const id = target.getAttribute('data-id')
 
     if(id !== 0){
@@ -58,7 +58,7 @@ class App extends React.Component{
           <Switch>
             <Route path="/addNew">
               <p className="addTitle">Add a New Framework</p>
-              <NewItemView handleInputChange={this.handleInputChange} handleAddFramework={this.handleAddFramework}/>
+              <NewItemView handleInputChange={this.handleInputChange} handleAddorEditFramework={this.handleAddorEditFramework}/>
             </Route>
             <Route path="/">
               <ListView list={this.state.list}/>

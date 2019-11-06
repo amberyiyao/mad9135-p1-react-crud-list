@@ -5,7 +5,6 @@ import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 
 function NewItemView(props){
 
-    //check if it is edit methods
     let name = ""
     let url = ""
     let lead = ""
@@ -34,7 +33,7 @@ function NewItemView(props){
             </div>
         </div>
         <div className="actions">
-            <Link className="save green" to="/" data-id={id} onClick={props.handleAddFramework}>SAVE</Link>
+            <Link className="save green" to="/" data-id={id} onClick={props.handleAddorEditFramework}>SAVE</Link>
             <Link className="cancel cancel" to="/">CANCEL</Link>
         </div>
     </div>
