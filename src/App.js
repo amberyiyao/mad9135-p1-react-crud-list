@@ -30,14 +30,26 @@ class App extends React.Component{
 
   }
 
-  handleAddorEditFramework = (ev) => {
-    const id = ev.target.getAttribute('data-id')
+  handleDeleteFramework = (ev) =>{
+    const id = Number(ev.target.getAttribute('data-id'))
+    const newList = this.state.list.filter((frame) => {
+      if(frame.id == id ){
+        return false
+      } else {
+        return true
+      }
+    })
+    this.setState({list: newList})
+  }
 
+  handleAddorEditFramework = (ev) => {
+    const id = Number(ev.target.getAttribute('data-id'))
+    console.log(id)
     if(id != 0){
       console.log(this.state.inputValue)
       const newList = this.state.list.map((frame)=> {
         if (frame.id == id){
-          const edited = {id: id, ...this.state.inputValue}
+          const edited = {...frame, id: id, ...this.state.inputValue}
           console.log(edited)
           return edited
         } else {
@@ -75,7 +87,7 @@ class App extends React.Component{
               <NewItemView handleInputChange={this.handleInputChange} handleAddorEditFramework={this.handleAddorEditFramework}/>
             </Route>
             <Route path="/">
-              <ListView list={this.state.list} handleInputChange={this.handleInputChange} handleAddorEditFramework={this.handleAddorEditFramework}/>
+              <ListView list={this.state.list} handleDeleteFramework={this.handleDeleteFramework} handleInputChange={this.handleInputChange} handleAddorEditFramework={this.handleAddorEditFramework}/>
             </Route>
           </Switch>
         </div>

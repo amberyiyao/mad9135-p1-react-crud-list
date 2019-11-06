@@ -20,7 +20,7 @@ function ListItem(props){
                 </div>
                 <div className="actions">
                     <Link className="edit green" to={editPath}>EDIT</Link>
-                    <Link className="delete red" to="/">DELETE</Link>
+                    <Link className="delete red" data-id={props.item.id} to="/" onClick={props.handleDeleteFramework}>DELETE</Link>
                 </div>
             </div>
             <Route path={editPath}>
