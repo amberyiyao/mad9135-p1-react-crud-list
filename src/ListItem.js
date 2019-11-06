@@ -20,11 +20,11 @@ function ListItem(props){
                 </div>
                 <div className="actions">
                     <Link className="edit green" to={editPath}>EDIT</Link>
-                    <Link className="delete red">DELETE</Link>
+                    <Link className="delete red" to="/">DELETE</Link>
                 </div>
             </div>
             <Route path={editPath}>
-                <EditItem item={props.item} edit={true}/>
+                <EditItem item={props.item} handleInputChange={props.handleInputChange} edit={true} handleAddorEditFramework={props.handleAddorEditFramework}/>
             </Route>
         </div>
     )

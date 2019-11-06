@@ -30,23 +30,37 @@ class App extends React.Component{
 
   }
 
-  handleAddorEditFramework = (target)=>{
-    const id = target.getAttribute('data-id')
+  handleAddorEditFramework = (ev) => {
+    const id = ev.target.getAttribute('data-id')
 
-    if(id !== 0){
+    if(id != 0){
+      console.log(this.state.inputValue)
       const newList = this.state.list.map((frame)=> {
-        if (frame.id === id){
-          return {id: id, ...this.state.inputValue}
+        if (frame.id == id){
+          const edited = {id: id, ...this.state.inputValue}
+          console.log(edited)
+          return edited
         } else {
           return frame
         }
       })
+      console.log(newList)
       this.setState({list: newList})
     } else {
       const newFramework = {id:Date.now(),...this.state.inputValue}
       const newList = [newFramework,...this.state.list]
       this.setState({list: newList})
     }
+  }
+
+  componentDidMount(){
+    if(localStorage.getItem('frameworkList')){
+      this.setState({list: JSON.parse(localStorage.getItem('frameworkList'))})
+    }
+  }
+
+  componentDidUpdate(){
+    localStorage.setItem('frameworkList',JSON.stringify(this.state.list))
   }
 
 
@@ -61,7 +75,7 @@ class App extends React.Component{
               <NewItemView handleInputChange={this.handleInputChange} handleAddorEditFramework={this.handleAddorEditFramework}/>
             </Route>
             <Route path="/">
-              <ListView list={this.state.list}/>
+              <ListView list={this.state.list} handleInputChange={this.handleInputChange} handleAddorEditFramework={this.handleAddorEditFramework}/>
             </Route>
           </Switch>
         </div>

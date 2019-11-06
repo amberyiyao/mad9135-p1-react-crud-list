@@ -10,7 +10,7 @@
     width: 80%;
 }
 
-.inputs p{
+.inputs label{
     color: rgba(128, 128, 128, 0.705);
     font-weight: 700;
 }
