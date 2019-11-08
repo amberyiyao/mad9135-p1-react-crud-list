@@ -30,9 +30,7 @@ class App extends React.Component{
 
   }
 
-  handleDeleteFramework = (ev) =>{
-    const id = Number(ev.target.getAttribute('data-id'))
-
+  handleDeleteFramework = (id) =>{
     const newList = this.state.list.filter((frame) => {
       if(frame.id == id ){
         if(window.confirm(`Do you want to delet ${frame.name}?`)){
@@ -44,21 +42,18 @@ class App extends React.Component{
     this.setState({list: newList})
   }
 
-  handleAddorEditFramework = (ev) => {
-    const id = Number(ev.target.getAttribute('data-id'))
-    console.log(id)
+  handleAddorEditFramework = (id) => {
+    
     if(id != 0){
-      console.log(this.state.inputValue)
       const newList = this.state.list.map((frame)=> {
         if (frame.id == id){
           const edited = {...frame, id: id, ...this.state.inputValue}
-          console.log(edited)
           return edited
         } else {
           return frame
         }
       })
-      console.log(newList)
+
       this.setState({list: newList})
     } else {
       const newFramework = {id:Date.now(),...this.state.inputValue}

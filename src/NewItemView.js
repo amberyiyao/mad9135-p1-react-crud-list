@@ -33,7 +33,7 @@ function NewItemView(props){
             </div>
         </div>
         <div className="actions">
-            <Link className="save green" to="/" data-id={id} onClick={props.handleAddorEditFramework}>SAVE</Link>
+            <Link className="save green" to="/" onClick={()=>{props.handleAddorEditFramework(id)}}>SAVE</Link>
             <Link className="cancel cancel" to="/">CANCEL</Link>
         </div>
     </div>
