@@ -21,19 +21,19 @@ function NewItemView(props){
         <div className="inputs">
             <div>
                 <label htmlFor="name">Framework Name</label>
-                <input id="name" className="nameInput" type="text" defaultValue={name} onChange={props.handleInputChange}/>
+                <input id="name" className="nameInput" type="text" required="required" defaultValue={name} onChange={props.handleInputChange}/>
             </div>
             <div>
                 <label htmlFor="docsURL">Docs URL</label>
-                <input id="docsURL" className="urlInput" type="text" defaultValue={url} onChange={props.handleInputChange}/>
+                <input id="docsURL" className="urlInput" type="text" required="required" defaultValue={url} onChange={props.handleInputChange}/>
             </div>
             <div>
                 <label htmlFor="lead">Lead by</label>
-                <input id="lead" className="leadInput" type="text" defaultValue={lead} onChange={props.handleInputChange}/>
+                <input id="lead" className="leadInput" type="text" required="required" defaultValue={lead} onChange={props.handleInputChange}/>
             </div>
         </div>
         <div className="actions">
-            <Link className="save green" to="/" onClick={()=>{props.handleAddorEditFramework(id)}}>SAVE</Link>
+            <Link className="save green" to="/" data-id={id} onClick={props.handleAddorEditFramework}>SAVE</Link>
             <Link className="cancel cancel" to="/">CANCEL</Link>
         </div>
     </div>

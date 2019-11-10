@@ -24,10 +24,13 @@ class App extends React.Component{
     inputValue: {}
   }
 
+  clearInput = () => {
+    this.setState({inputValue:{}})
+  }
+
   handleInputChange = ({target: {id, value}}) => {
     const newValue = {...this.state.inputValue, [id]: value}
     this.setState({inputValue: newValue})
-
   }
 
   handleDeleteFramework = (id) =>{
@@ -40,11 +43,25 @@ class App extends React.Component{
         return true
     })
     this.setState({list: newList})
+    this.clearInput()
   }
 
-  handleAddorEditFramework = (id) => {
-    
+  handleAddorEditFramework = (ev) => {
+
+    const id = ev.target.getAttribute('data-id')
+    const input = this.state.inputValue
+
     if(id != 0){
+
+      for(let key in input){
+        if(!input[key]){
+          alert(`${key} can not be empty!`)
+          document.getElementById(key).focus()
+          ev.preventDefault()
+          return
+        }
+      }
+
       const newList = this.state.list.map((frame)=> {
         if (frame.id == id){
           const edited = {...frame, id: id, ...this.state.inputValue}
@@ -56,10 +73,30 @@ class App extends React.Component{
 
       this.setState({list: newList})
     } else {
+
+      if(!input.name){
+        alert(`name can not be empty!`)
+        document.getElementById('name').focus()
+        ev.preventDefault()
+        return
+      } else if(!input.docsURL){
+        alert(`docsURL can not be empty!`)
+        document.getElementById('docsURL').focus()
+        ev.preventDefault()
+        return
+      }else if(!input.lead){
+        alert(`lead can not be empty!`)
+        document.getElementById('lead').focus()
+        ev.preventDefault()
+        return
+      }
+
       const newFramework = {id:Date.now(),...this.state.inputValue}
       const newList = [newFramework,...this.state.list]
       this.setState({list: newList})
     }
+
+    this.clearInput()
   }
 
   componentDidMount(){

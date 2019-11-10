@@ -33,6 +33,7 @@
 
 .inputs input:focus{
     outline: none;
+    background-color: rgb(223, 229, 235);
 }
 
 .actions{
