@@ -112,7 +112,7 @@ class App extends React.Component{
 
   render(){
     return (
-      <Router basename="/mad9135-p1-react-crud-list" >
+      <Router >
         <div className="App">
           <AppHeader/>
           <Switch>
